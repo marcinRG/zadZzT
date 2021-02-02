@@ -1,83 +1,37 @@
-# zadanie
+# Rozwiązanie zadania
 
-Cześć!  
-Do stworzenia jest prosta aplikacja w oparciu o mini-framework `PureJS`. Aplikacja powinna składać się z dwóch widoków:
-1. Home - prosty formularz z polami `username` i `password`, przycisk `submit`.
-2. Success - strona powitalna z informacją o udanej akcji.
+Przy rozwiązaniu zadania poszedłem po najmniejszej linii oporu. Jeśli ktoś uwielbia kolor żóty to być może uzna moje rozwiązanie za estetyczne.
+Rozwiązanie składa się z dwóch części: 
+1. W konfiguracji webpacka dodano `raw-loader` umożliwający bundlowanie dowolnych plików
+2. Zmieniłem `engine.js` w taki sposób, że możliwe jest ładowanie template'tów zarówno z zewnętrznych plików jak i również w dotychczasowy sposób, z sekcji script nagłówka.
 
-Po przesłaniu formularza aplikacja powinna przekierować do strony success lub wyświetlić informację o błędzie.
+### Wykonane zmiany oryginalnych plików
 
-##### Część zaawansowana
-Zmodyfikuj projekt w taki sposób, aby każda templatka była w osobnym pliku. To zadanie wymaga trochę kreatywności, być może trzeba będzie rozbudować konfigurację webpack'a, być może zmodyfikować logikę `engine.js` lub `router.js`. Wszystkie chwyty dozwolone. Cel jest taki, aby templatki były tworzone poza `index.html`.
+1. `router.js` - dodano parametr do tej metody, dzięki czemu można wybrać id elementu, w którym renderowane będą kolejne podstrony.
+2. `engine.js` - dodano funkcję `getTemplate(str)` - dzięki której można ładować szablony albo w dotychczasowy sposób, albo z dołączanych plików szablonów.
 
-##### Rozwiązanie
-Na rozwiązanie składa się:
-- link do repozytorium
-- screenshot widoku home
+### Moje pliki 
 
-Oceniamy:
-- działające rozwiązanie
-- czysty i dobrze napisany kod
-- minimalistyczny i estetyczny design
+1. `appState.js` - plik zawierący klasę przechowującą stan aplikacji.
+2. `getServerResponse.js` - funkcja do wysłania zapytań na serwer.
+3. wszystkie pliki szablonów znajdują się w katalogu templates
 
-## Dokumentacja PureJS
+### Różnice między moim rozwiązaniem a specyfikacją
 
-Framework składa się z dwóch części
-1. `engine.js` - silnik templatek
-2. `router.js` - router i logika kontrolerów
+Zostawiłem podstronę 'test' ładowaną z `index.html` po to aby sprawdzić czy działają dwa sposoby ładowania szablonów jednocześnie.
+Po zalogowaniu na stronie głównej widoczna jest dodatkowa sekcja, zawierająca przycisk do wylogowania. 
 
-##### Dodawanie widoków
 
-Aby stworzyć widok należy:
-1. Dodać templatkę w `index.html` z odpowiednim `id`
-2. Zarejestrować widok przy pomocy metody `route`
+### Zrzuty ekranów aplikacji 
 
-```javascript
-route('/path/to/view', 'idSelector', function() {
-  // controller logic
-})
-```
+- strona główna (logowania)
 
-##### Logika kontrolerów
+![Home Page!](https://raw.githubusercontent.com/marcinRG/zadZzT/master/imgs/home.jpg "Strona główna")
 
-1. `template` - interpolacja (*example 1*) - zmienne w kontrolerach są interpolowane na templatki (`<%= nazwa zmiennej %>`). Dodatkowo templatki wykonują czysty JavaScript taki jak np. pętle (`<% console.log('js is in the air!') %>`.
+- błąd pokazujący się przy wybraniu nieprawidłowego adresu
 
-2. `$on` - rejestracja eventów (*example 2*) - aby podpiąć obsługę eventu należy skorzystać z metody `$on`, zgodnie z sygnaturą: `this.$on('.css-selector', 'eventType', (ev) => { /* event handler */ });`
+![Error!](https://raw.githubusercontent.com/marcinRG/zadZzT/master/imgs/404.jpg "Strona nie istnieje")
 
-3. `$refresh` - wymuszony rerender (*example 2*) - metoda umożliwiająca odświeżenie całego widoku np. na wypadek zmiany wartości pól.
+- ekran powitalny po prawidłowym zalgowaniu 
 
-## Dokumentacja API
-*Example request*
-```
-POST https://zwzt-zadanie.netlify.app/api/login
-
-{
-  username: 'zwzt',
-  password: 'secret'
-}
-```
-*Example response*
-```
-{
-  message: 'Login success!',
-  token: 'eyJhbGciOiJIUz...'
-}
-```
-
-Aby otrzymać komunikat o błędzie, trzeba w polu `password` wpisać `error`
-
-*Example request*
-```
-POST https://zwzt-zadanie.netlify.app/api/login
-{
-  username: 'zwzt',
-  password: 'error'
-}
-```
-*Example response*
-```
-{
-  message: 'Wrong password!',
-  error: true
-}
-```
+![Logged in!](https://raw.githubusercontent.com/marcinRG/zadZzT/master/imgs/login-sukces.jpg "Udane logowanie")
