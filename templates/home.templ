@@ -1,0 +1,30 @@
+        <div class="login-screen <%= logged ? 'disabled': '' %> ">
+            <form class="login-form">
+                <h2>Sign in</h2>
+                <label for="user-txt">user</label>
+                <input id="user-txt" type="text" placeholder="user name" name="username"/>
+                <label>password</label>
+                <input type="password" placeholder="password" name="password"/>
+                <input type="submit" class="action-button btn-login" value="Log in" />
+            </form>
+        </div>
+        <div class="welcome-screen <%= logged ? '': 'disabled' %>">
+            <h2>Welcome!!!</h2>
+
+            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam at dolor et facere magnam maiores,
+                quaerat quam, quidem quos recusandae sit tempore velit voluptate. Adipisci fugiat ipsum quam tenetur
+                ullam?</span>
+                <span>Aliquam aliquid amet aspernatur, consequatur corporis cupiditate deserunt error est ex excepturi in ipsam
+                    ipsum laborum libero modi placeat possimus quisquam quod recusandae reiciendis rerum sint, sit velit
+                    veritatis voluptatibus?</span>
+                <span>Aliquid molestiae quidem veniam voluptatibus! A ad adipisci asperiores blanditiis culpa cupiditate
+                    dignissimos dolores, enim est explicabo laboriosam magnam maiores minima numquam officia quo quod ratione tempora
+                    veritatis vitae voluptates.</span>
+                <span>Accusamus aliquid aperiam aspernatur cum cupiditate delectus doloribus eius est excepturi facere
+                    illum maxime nesciunt odit pariatur perferendis possimus quae sapiente, veritatis voluptatibus, voluptatum!
+                    Aliquid aperiam culpa labore quia rerum?</span>
+                <span>Assumenda cum deserunt itaque laborum, modi molestiae necessitatibus nemo nesciunt quae quisquam reiciendis
+                    repellendus sequi similique ut veritatis. Aliquid architecto asperiores aut corporis doloremque ea eum harum ipsam officiis quisquam.</span>
+            </p>
+            <button class="action-button btn-logout">Log out</button>
+        </div>

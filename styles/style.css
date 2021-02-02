@@ -1,0 +1,249 @@
+*, html, body {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    width: 70%;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 1024px) {
+    body {
+        width: 100%;
+    }
+}
+
+:root {
+    --color-main: #ffca28;
+    --color-menu: #fdd835;
+    --color-light: #fffeac;
+    --color-dark: #c79a00;
+    --color-text: #000000;
+}
+
+.app-header {
+    background-color: var(--color-main);
+    padding: 2em 0;
+}
+
+.app-header .app-title {
+    font-family: 'Lobster', cursive;
+    margin: 0 10px;
+}
+
+.navbar {
+    background-color: var(--color-menu);
+}
+
+.nav-elements {
+    list-style-type: none;
+}
+
+.nav-elements > li {
+    display: inline-block;
+    border-bottom: 3px solid transparent;
+    height: 3em;
+    width: 120px;
+    text-align: left;
+    line-height: 3em;
+}
+
+.nav-elements > li:hover {
+    border-bottom: 3px solid black;
+    background-color: var(--color-light);
+}
+
+.nav-elements a {
+    vertical-align: center;
+    color: var(--color-text);
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.main {
+    padding: 2em 3em;
+    background-color: whitesmoke;
+}
+
+footer {
+    background-color: var(--color-dark);
+    padding: 10px 0;
+}
+
+.login-screen {
+    max-width: 450px;
+    margin: 20px auto;
+}
+
+.login-screen.disabled {
+    display: none;
+}
+
+.login-form {
+    background-color: var(--color-menu);
+    max-width: 300px;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 30px 20px 60px;
+    text-align: left;
+}
+
+.login-form h2 {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.login-form label {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 9px;
+}
+
+.login-form input {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid black;
+    height: 35px;
+    padding: 0 6px;
+    margin: 5px auto 10px;
+    display: block;
+    outline: 0;
+}
+
+.action-button {
+    border-radius: 5px;
+    height: 35px;
+    font-weight: bold;
+    margin-top: 20px;
+    background-color: black;
+    color: var(--color-main);
+    text-transform: uppercase;
+    padding: 10px 20px;
+    outline: 0;
+    cursor: pointer;
+}
+
+.action-button.btn-login {
+    margin-top: 25px;
+    width: 50%;
+    display: inline-block;
+}
+
+.welcome-screen, .test-screen {
+    margin: 20px auto;
+}
+
+.welcome-screen.disabled, .test-screen.disabled {
+    display: none;
+}
+
+.welcome-screen h2, .test-screen h2 {
+    display: inline-block;
+    background-color: var(--color-dark);
+    color: white;
+    width: 100%;
+    font-family: 'Lobster', cursive;
+    padding: 10px;
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+.welcome-screen p, .test-screen p {
+    padding: 30px 10px;
+    font-size: 14px;
+    line-height: 150%;
+    text-align: justify;
+}
+
+.login-success-screen {
+    margin: 20px auto 80px;
+    text-align: center;
+}
+
+.login-success-screen .success, .login-success-screen .failure {
+    width: 50%;
+    margin: 100px auto;
+    background-color: var(--color-main);
+    color: white;
+    font-size: 40px;
+    padding: 20px 0;
+    font-family: 'Lobster', cursive;
+}
+
+.login-success-screen .success.disabled, .login-success-screen .failure.disabled {
+    display: none;
+}
+
+.login-success-screen .success:before, .login-success-screen .failure:before {
+    color: black;
+    margin-right: 10px;
+    font-size: 50px;
+    display: inline-block;
+}
+
+@media only screen and (max-width: 1024px) {
+    .login-success-screen .success, .login-success-screen .failure {
+        width: 100%;
+        margin: 50px auto;
+        font-size: 18px;
+        padding: 20px 0;
+    }
+
+    .login-success-screen .success:before, .login-success-screen .failure:before {
+        margin-right: 5px;
+        font-size: 18px;
+    }
+}
+
+.login-success-screen .success:before {
+    content: '\002714';
+}
+
+.login-success-screen .failure:before {
+    content: '\0026A0';
+}
+
+
+a.link-back:before {
+    content: '\0021E6';
+    color: black;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+a.link-back {
+    color: black;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.error-404-screen {
+    margin: 20px auto 80px;
+    text-align: center;
+}
+
+.error-404-screen h2 {
+    width: 50%;
+    margin: 100px auto;
+    background-color: var(--color-main);
+    color: black;
+    font-size: 60px;
+    padding: 40px 0;
+    font-family: 'Lobster', cursive;
+}
+
+.error-404-screen h2:before {
+    content: '\0026A0';
+    color: black;
+    margin: 0 10px;
+    font-size: 80px;
+    display: inline-block;
+}
