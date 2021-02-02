@@ -76,6 +76,27 @@ footer {
     padding: 10px 0;
 }
 
+.error-msg {
+    background-color: white;
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    margin: 20px 0;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.error-msg:before {
+    content: '\0026A0';
+    margin: 0 5px 0 10px;
+    display: inline-block;
+}
+
+.error-msg.disabled {
+    display: none;
+}
+
+
 .login-screen {
     max-width: 450px;
     margin: 20px auto;

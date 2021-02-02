@@ -23,6 +23,7 @@ function getUsernamePassword(form) {
 
 route('/', 'home', function () {
     this.logged = appState.loggedIn;
+    this.error = false;
     this.$on('.login-form', 'submit', (event) => {
         event.preventDefault();
         getServerResponse(...Object.values(getUsernamePassword(event.target))).then((data) => {
@@ -30,6 +31,7 @@ route('/', 'home', function () {
             if (appState.loggedIn) {
                 window.location.hash = '#/success';
             }
+            this.error = appState.loginError;
             this.logged = appState.loggedIn;
             this.$refresh();
         });

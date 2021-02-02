@@ -6,6 +6,8 @@ const msgs = {
 class AppState {
     constructor() {
         this.loggedIn = false;
+        this.loginError = false;
+        this.token = null;
     }
 
     logIn(responseObj) {
@@ -13,10 +15,13 @@ class AppState {
         if (responseObj.message === msgs.SUCCESS && responseObj.token) {
             this.loggedIn = true;
             this.token = responseObj.token;
+        } else {
+            this.loginError = true;
         }
     }
 
     logOut() {
+        this.loginError = false;
         this.loggedIn = false;
         this.token = null;
     }

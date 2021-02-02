@@ -6,7 +6,9 @@
                 <label>password</label>
                 <input type="password" placeholder="password" name="password"/>
                 <input type="submit" class="action-button btn-login" value="Log in" />
+                <div class="error-msg <%= error ? '': 'disabled' %>">Error occured</div>
             </form>
+
         </div>
         <div class="welcome-screen <%= logged ? '': 'disabled' %>">
             <h2>Welcome!!!</h2>
