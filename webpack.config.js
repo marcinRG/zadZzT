@@ -8,4 +8,16 @@ module.exports = {
   devServer: {
     hot: true,
   },
+  module: {
+    rules: [
+      {
+        test: /\.(templ|txt)$/i,
+        use: [
+          {
+            loader: 'raw-loader',
+          }
+        ]
+      },
+    ],
+  },
 };

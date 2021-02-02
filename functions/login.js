@@ -10,6 +10,7 @@ const headers = {
 }
 
 exports.handler = async (event, context) => {
+  console.log(event)
   try {
     if (event.httpMethod != 'POST') {
       return {

@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>PureJS</title>
-  <script type="text/html" id="home">
-    <h1>Start <%= where %>!</h1>
-  </script>
-  <script type="text/html" id="example1">
-    <h1><%= title %></h1>
-    <% for (let i of title) { %>
-      <span><%= i %></span>
-    <% } %>
-  </script>
-  <script type="text/html" id="example2">
-    <h1><%= title %></h1>
-    <button class="my-button">Click me <%= counter %></button>
-  </script>
-  <script type="text/html" id="404">
-    <h1>404 Not found</h1>
-  </script>
+    <meta charset="utf-8">
+    <title>PureJS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <script type="text/html" id="testTemplate">
+        <div class="test-screen">
+            <h2>Test</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet deleniti dolores, iste nisi non
+                nostrum obcaecati quaerat quam repellendus reprehenderit suscipit voluptates? Ad eligendi eum id modi,
+                saepe ullam.</p>
+        </div>
+    </script>
 </head>
 <body>
-  <nav>
-    <a href="#">home</a>
-    <a href="#/ex1">example 1</a>
-    <a href="#/ex2">example 2</a>
-  </nav>
-  <div id="app"></div>
-  <script src="./app.js"></script>
+<header class="app-header">
+    <h1 class="app-title">Test app</h1>
+</header>
+<nav class="navbar">
+    <ul class="nav-elements">
+        <li><a href="#">home</a></li>
+        <li><a href="#/test">test</a></li>
+    </ul>
+</nav>
+<section class="main">
+    <div id="app-modified">
+        <!---->
+    </div>
+</section>
+<footer class="footer">
+    <p>&copy; 2021</p>
+</footer>
+<script src="./app.js"></script>
 </body>
 </html>
