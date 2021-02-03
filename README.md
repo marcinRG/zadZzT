@@ -1,6 +1,6 @@
 # Rozwiązanie zadania
 
-Przy rozwiązaniu zadania poszedłem po najmniejszej linii oporu. Jeśli ktoś uwielbia kolor żóty to być może uzna moje rozwiązanie za estetyczne.
+Przy rozwiązaniu zadania poszedłem po linii najmniejszego oporu. Jeśli ktoś uwielbia kolor żóty to być może uzna moje rozwiązanie za estetyczne.
 Rozwiązanie składa się z dwóch części: 
 1. W konfiguracji webpacka dodano `raw-loader` umożliwający bundlowanie dowolnych plików
 2. Zmieniłem `engine.js` w taki sposób, że możliwe jest ładowanie template'tów zarówno z zewnętrznych plików jak i również w dotychczasowy sposób, z sekcji script nagłówka.
@@ -14,7 +14,7 @@ Rozwiązanie składa się z dwóch części:
 
 1. `appState.js` - plik zawierący klasę przechowującą stan aplikacji.
 2. `getServerResponse.js` - funkcja do wysłania zapytań na serwer.
-3. wszystkie pliki szablonów znajdują się w katalogu templates
+
 
 ### Różnice między moim rozwiązaniem a specyfikacją
 
